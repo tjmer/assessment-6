@@ -24,23 +24,25 @@ test('I can start a game', async () => {
 test('Upper left corner', async () => {
 
     let upperLeft = await driver.findElement(By.xpath('/html/body/table/tbody/tr[1]/td[1]'))
-    await upperLeft.click()
-
+    upperLeft.click()
+    expect(await upperLeft.getText()).toContain('X')
+    await driver.sleep(2000)
+    
 
 })
 
 test('Upper right corner', async () => {
 
     let upperRight = await driver.findElement(By.xpath('/html/body/table/tbody/tr[1]/td[3]'))
-
     await upperRight.click()
+    expect(await upperRight.getText()).toContain('X')
     
 })
 
 test('Lower right corner', async () => {
     let lowerRight = await driver.findElement(By.xpath('/html/body/table/tbody/tr[3]/td[3]'))
-
     await lowerRight.click()
+    expect(await lowerRight.getText()).toContain('X')
 
 })
 
