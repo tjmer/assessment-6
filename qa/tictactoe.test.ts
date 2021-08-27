@@ -50,8 +50,19 @@ test('Lower right corner', async () => {
 
 test('Is the O populating top middle', async () => {
 
-    let upperMiddle = await driver.findElement(By.xpath('/html/body/table/tbody/tr[1]/td[2]')).getText()
-    expect(upperMiddle).toContain('O')
-    await driver.sleep(2000)
+    driver.navigate().refresh()
+    await driver.sleep(1000)
+
+    let button = await driver.findElement(By.id("start-game"))
+    await button.click()
+
+    let upperRightSq = await driver.findElement(By.xpath('/html/body/table/tbody/tr[1]/td[3]'))
+    await upperRightSq.click()
+    let upperLeft = await driver.findElement(By.xpath('/html/body/table/tbody/tr[1]/td[1]')).getText()
+    await expect(upperLeft).toContain('O')
+
+    // let upperMiddle = await driver.findElement(By.xpath('/html/body/table/tbody/tr[1]/td[2]')).getText()
+    // expect(upperMiddle).toContain('O')
+    // await driver.sleep(2000)
 
 })
