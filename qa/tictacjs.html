@@ -21,11 +21,41 @@
         text-align: center;
         font-size: 45px;
     }
+    td {
+        cursor: pointer;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url('https://media.istockphoto.com/photos/business-marketing-strategy-planning-concept-wooden-block-tic-tac-toe-picture-id915487006?s=612x612');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #start-game {
+        background-color: beige;
+        color: blue;
+        transform: rotate(-20deg);
+    }
+
+    #start-game:hover {
+        color:white;
+        background-color: black;
+        cursor: pointer;
+    }
+
+    #game-name {
+        color: burlywood;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        transform: rotate(10deg);
+        text-shadow: 2px 3px 3px black;
+    }
   </style>
 </head>
 <body>
 
-<h1>Tic Tac JS
+<h1 id = "game-name">Tic Tac JS
   <button id="start-game">Start!</button>
 </h1>
 
