@@ -36,6 +36,7 @@ test('Upper right corner', async () => {
     let upperRight = await driver.findElement(By.xpath('/html/body/table/tbody/tr[1]/td[3]'))
     await upperRight.click()
     expect(await upperRight.getText()).toContain('X')
+    await driver.sleep(2000)
     
 })
 
@@ -43,15 +44,14 @@ test('Lower right corner', async () => {
     let lowerRight = await driver.findElement(By.xpath('/html/body/table/tbody/tr[3]/td[3]'))
     await lowerRight.click()
     expect(await lowerRight.getText()).toContain('X')
+    await driver.sleep(2000)
 
 })
 
 test('Is the O populating top middle', async () => {
 
     let upperMiddle = await driver.findElement(By.xpath('/html/body/table/tbody/tr[1]/td[2]')).getText()
-
     expect(upperMiddle).toContain('O')
-
     await driver.sleep(2000)
 
 })
